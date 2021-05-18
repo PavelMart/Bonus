@@ -331,5 +331,3 @@ const bonus = new Bonus('.hero-list', '.menu', '.show-more', '.popup');
 bonus.init();
 
 
-
-
