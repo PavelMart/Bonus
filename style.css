@@ -5,6 +5,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 body{
+    overflow: scroll;
     position: relative;
 }
 h4,ul,li,table,td,tr,button,a {
@@ -99,7 +100,6 @@ a{
     margin-right: 20px;
 }
 .hero-list{
-
     width: 100%;
     list-style: none;
     display: flex;
@@ -129,11 +129,12 @@ a{
 }
 .hero-img {
     width: 90%;
-    height: 300px;
+    height: 450px;
     overflow: hidden;
     border-radius: 5%;
 }
 .hero-name {
+    font-size: 26px;
     margin-top: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -149,9 +150,9 @@ a{
     background: transparent;
     box-shadow: 0 0 3px gray;
     border: none;
-    font-size: 20px;
+    font-size: 28px;
     padding: 15px 45px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 10px;
 }
 .show-more:hover{
@@ -262,3 +263,101 @@ tr td:last-child{
     flex-basis: 55%;
 }
 
+@media only screen and (max-width: 1890px) {
+    .hero-img {
+        height: 425px;
+    }
+}
+
+@media only screen and (max-width: 1780px) {
+    .hero-img {
+        height: 375px;
+    }
+}
+
+@media only screen and (max-width: 1570px) {
+    .hero-img {
+        height: 325px;
+    }
+    .hero-name {
+        font-size: 20px;
+    }
+    .show-more{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    .hero-img {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .hero-img {
+        height: 275px;
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .hero-img {
+        height: 250px;
+    }
+    .hero-name {
+        font-size: 16px;
+    }
+    .show-more{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .hero-img {
+        height: 225px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .hero-list {
+        justify-content: space-around;
+    }
+    .hero {
+        flex-basis: 30%;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .hero-list {
+        justify-content: space-between;
+    }
+    .hero {
+        flex-basis: 45%;
+    }
+    .hero-img {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hero-img {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-list {
+        justify-content: center;
+    }
+    .hero {
+        flex-basis: 85%;
+    }
+    .hero-img {
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .hero-img {
+        height: 280px;
+    }
+}
