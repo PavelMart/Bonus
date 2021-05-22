@@ -29,7 +29,7 @@ a{
 .header{
     margin-bottom: 15px;
     background: linear-gradient( #7e70ae, white);
-    position: relative;
+    position: fixed;
 }
 .header img {
     width: 25%;
@@ -77,14 +77,16 @@ a{
     transform: translateX(0%)
 }
 .menu h3 {
-    font-size: 32px;
+    font-size: 50px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 .filter-films{
     display: flex;
     height: 100%;
     flex-direction: column;
     align-items: flex-start;
+    font-size: 26px;
 }
 .filter-item {
     list-style: none;
@@ -106,6 +108,7 @@ a{
     justify-content: flex-start;
     flex-wrap: wrap;
     text-align: center;
+    margin-top: 25%;
 }
 .hero {
     flex-basis: 25%;
@@ -171,7 +174,9 @@ a{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    background-image: url(./img/phone.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     position: fixed;
     z-index: 100;
 }
@@ -197,7 +202,7 @@ a{
 .popup-body {
     position: relative;
     width: 75%;
-    height: 550px;
+    height: 800px;
     background-color: white;
     border-radius: 15px;
     padding-right: 30px;
@@ -208,26 +213,28 @@ a{
     box-shadow: 0 0 30px black;
 }
 h2{
-    margin-bottom: 20px;
-    font-size: 50px;
+    margin-bottom: 40px;
+    font-size: 60px;
 }
 .popup-table {
     display: flex;
     flex-direction: column;
-    font-size: 18px;
+    font-size: 28px;
 }
 tr {
     display: flex;
-    justify-content: space-between;
 }
 tr:not(:last-child) {
     border-bottom: 1px solid black;
 }
 tr td:first-child{
     text-align: left;
+    width: 180px;
+    border-right: 1px solid;
+    margin-right: 20px;
 }
 tr td:last-child{
-    text-align: right;
+    text-align: left;
 }
 .popup-close {
     position: absolute;
@@ -259,7 +266,6 @@ tr td:last-child{
     height: 100%;
 }
 .popup-info {
-    text-align: center;
     flex-basis: 55%;
 }
 
@@ -267,15 +273,56 @@ tr td:last-child{
     .hero-img {
         height: 425px;
     }
+    .popup-body {
+        height: 750px;
+    }
+    .popup-table {
+        font-size: 26px;
+    }
+    tr td:first-child{
+        width: 165px;
+    }
+    h2{
+        font-size: 58px;
+    }
+    .menu h3 {
+        font-size: 48px;
+        margin-bottom: 28px;
+    }
+    .filter-films{
+        font-size: 24px;
+    }
 }
 
 @media only screen and (max-width: 1780px) {
     .hero-img {
         height: 375px;
     }
+    .popup-body {
+        height: 700px;
+    }
+    .popup-table {
+        font-size: 24px;
+    }
+    tr td:first-child{
+        width: 150px;
+    }
+    h2{
+        font-size: 56px;
+    }
+    .menu h3 {
+        font-size: 46px;
+        margin-bottom: 26px;
+    }
+    .filter-films{
+        font-size: 22px;
+    }
 }
 
 @media only screen and (max-width: 1570px) {
+    .header img {
+        width: 30%;
+    }
     .hero-img {
         height: 325px;
     }
@@ -285,17 +332,75 @@ tr td:last-child{
     .show-more{
         font-size: 22px;
     }
+    .popup-body {
+        height: 650px;
+    }
+    .popup-table {
+        font-size: 22px;
+    }
+    tr td:first-child{
+        width: 135px;
+    }
+    h2{
+        font-size: 54px;
+    }
+    .menu h3 {
+        font-size: 44px;
+        margin-bottom: 24px;
+    }
+    .filter-films{
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1360px) {
     .hero-img {
         height: 300px;
     }
+    .popup-body {
+        height: 600px;
+    }
+    .popup-table {
+        font-size: 20px;
+    }
+    tr td:first-child{
+        width: 120px;
+    }
+    h2{
+        font-size: 52px;
+    }
+    .menu h3 {
+        font-size: 42px;
+        margin-bottom: 22px;
+    }
+    .filter-films{
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 1250px) {
     .hero-img {
         height: 275px;
+    }
+    .popup-body {
+        height: 550px;
+    }
+    .popup-table {
+        font-size: 18px;
+    }
+    tr td:first-child{
+        width: 105px;
+    }
+    h2{
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .menu h3 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .filter-films{
+        font-size: 16px;
     }
 }
 
@@ -309,11 +414,47 @@ tr td:last-child{
     .show-more{
         font-size: 18px;
     }
+    .popup-body {
+        height: 500px;
+    }
+    .popup-table {
+        font-size: 16px;
+    }
+    tr td:first-child{
+        width: 100px;
+    }
+    h2{
+        font-size: 46px;
+    }
+    .menu {
+        width: 35%;
+    }
+    .menu h3 {
+        font-size: 38px;
+    }
+    .filter-films{
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 1050px) {
     .hero-img {
         height: 225px;
+    }
+    .popup-body {
+        height: 450px;
+    }
+    .popup-table {
+        font-size: 14px;
+    }
+    tr td:first-child{
+        width: 90px;
+    }
+    h2{
+        font-size: 42px;
+    }
+    .menu h3 {
+        font-size: 36px;
     }
 }
 
@@ -323,6 +464,31 @@ tr td:last-child{
     }
     .hero {
         flex-basis: 30%;
+    }
+    .popup-body {
+        height: 400px;
+    }
+    .popup-table {
+        font-size: 12px;
+    }
+    tr td:first-child{
+        width: 75px;
+    }
+    h2{
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+    .menu-button {
+        top: 10px;
+        left: 10px;
+        width: 75px;
+        height: 75px;
+    }
+    .menu {
+        width: 50%;
+    }
+    .first-screen {
+        background-image: url(./img/marvel_vertical.jpg);
     }
 }
 
@@ -336,11 +502,53 @@ tr td:last-child{
     .hero-img {
         height: 300px;
     }
+    .popup-body {
+        height: 350px;
+    }
+    .popup-table {
+        font-size: 10px;
+    }
+    tr td:first-child{
+        width: 60px;
+    }
+    h2{
+        font-size: 34px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
+    .header img {
+        width: 40%;
+    }
+    .hero-list {
+        margin-top: 35%;
+    }
     .hero-img {
         height: 250px;
+    }
+    .popup-body {
+        padding: 0;
+        height: 75%;
+        overflow: scroll;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .popup-info {
+        text-align: center;
+        flex-basis: 85%;
+    }
+    .popup-photo {
+        height: 350px;
+        flex-basis: 100%;
+        position: relative;
+        border-radius: 0;
+    }
+    .popup-photo img{
+        height: inherit;
+        top: 0;
+    }
+    .menu {
+        width: 85%;
     }
 }
 
@@ -359,5 +567,11 @@ tr td:last-child{
 @media only screen and (max-width: 460px) {
     .hero-img {
         height: 280px;
+    }
+    .menu h3 {
+        font-size: 30px;
+    }
+    .filter-films{
+        font-size: 12px;
     }
 }
