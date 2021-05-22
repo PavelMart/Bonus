@@ -8,7 +8,6 @@ class Bonus {
         this.heroList = [];
         this.popup = document.querySelector(popup);
         this.lastRenderElement = 0;
-        this.number = 4;
         this.heroKey = [
             'name',
             'species',
@@ -22,6 +21,12 @@ class Bonus {
     }
 
     createElement(item) {
+
+        this.lastRenderElement++;
+
+        if ( this.lastRenderElement === this.heroList.length) {
+            this.showMore.style.display = 'none';
+        }
 
         const li = document.createElement('li');
         const name = item.name;
@@ -63,14 +68,6 @@ class Bonus {
         data.forEach( item => {
             const li = this.createElement(item);
             liElems.push(li);
-            
-            this.lastRenderElement++;
-            
-            if ( this.lastRenderElement === this.heroList.length) {
-                this.showMore.style.display = 'none';
-            } else {
-                this.showMore.style.display = '';
-            }
         });
 
         liElems.forEach( li => {
@@ -258,7 +255,7 @@ class Bonus {
 
     eventListeners() {
         this.showMore.addEventListener('click', () => {
-            this.renderData(this.heroList.slice(this.lastRenderElement, this.lastRenderElement + this.number));
+            this.renderData(this.heroList.slice(this.lastRenderElement, this.lastRenderElement + 4));
             const height = document.documentElement.offsetHeight;
             window.scrollTo(0, height);
         });
@@ -294,15 +291,6 @@ class Bonus {
             film.addEventListener('change', this.applyFilters.bind(this));
         });
 
-        window.addEventListener('resize', () => {
-            this.getNumber();
-            this.list.innerHTML = '';
-
-            this.renderData(this.heroList.slice(0, this.number));
-            this.lastRenderElement = this.number;
-
-        });
-
 
 
     }
@@ -315,22 +303,6 @@ class Bonus {
         data.forEach( item => {
             this.heroList.push(item);
         });
-    }
-
-    getNumber() {
-        let number;
-
-        if (document.documentElement.offsetWidth <= 960 && document.documentElement.offsetWidth > 790) {
-            number = 3;
-        } else if (document.documentElement.offsetWidth <= 790 && document.documentElement.offsetWidth > 600) {
-            number = 2;
-        } else if (document.documentElement.offsetWidth <= 600) {
-            number = 1;
-        } else {
-            number = 4;
-        }
-
-        this.number = number;
     }
 
     init() {
@@ -346,8 +318,7 @@ class Bonus {
             .then( this.addData.bind(this) )
             .then( this.createFiltersMenu.bind(this) )
             .then( () => {
-                this.getNumber();
-                this.renderData(this.heroList.slice(this.lastRenderElement, this.lastRenderElement + this.number));
+                this.renderData(this.heroList.slice(this.lastRenderElement, this.lastRenderElement + 4));
             })
             .then(this.eventListeners.bind(this))
             .catch(error => console.error(error));
