@@ -53,12 +53,14 @@ a{
 }
 .menu {
     position: fixed;
-    width: 30%;
+    overflow: scroll;
+    width: 40%;
     height: 100%;
     background-color: #000;
     opacity: .9;
-    left: 0;
+    right: 0;
     margin: 0;
+    padding-bottom: 20px;
     top: 0;
     z-index: 99;
     display: -webkit-box;
@@ -66,8 +68,8 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
     color: white;
 }
 .active-menu {
